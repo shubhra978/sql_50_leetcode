@@ -1,0 +1,32 @@
+620. Not Boring Movies
+Easy
+
+1251. Average Selling Price
+Easy
+
+1075. Project Employees I
+Easy
+
+1633. Percentage of Users Attended a Contest
+Easy
+
+1211. Queries Quality and Percentage
+Easy
+
+1193. Monthly Transactions I
+-- Write your PostgreSQL query statement below
+select
+TO_CHAR(trans_date ,'YYYY-MM') as month,
+country,
+count(amount) as trans_count,
+sum(case when state = 'approved' then 1 else 0 end) as approved_count,
+sum(amount) as trans_total_amount,
+sum(case when state = 'approved' then amount else 0 end) as approved_total_amount 
+from
+Transactions
+group by TO_CHAR(trans_date ,'YYYY-MM') , country
+
+
+1174. Immediate Food Delivery II
+
+550. Game Play Analysis IV

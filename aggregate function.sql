@@ -1,5 +1,12 @@
 620. Not Boring Movies
-Easy
+select
+id,
+movie,
+description,
+rating
+from cinema
+where id % 2 !=0 and description != 'boring'
+order by rating desc
 
 1251. Average Selling Price
 Easy
@@ -14,7 +21,6 @@ Easy
 Easy
 
 1193. Monthly Transactions I
--- Write your PostgreSQL query statement below
 select
 TO_CHAR(trans_date ,'YYYY-MM') as month,
 country,

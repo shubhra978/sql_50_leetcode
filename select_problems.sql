@@ -23,3 +23,9 @@ order by author_id asc;
 1683. Invalid Tweets
   
 select tweet_id from Tweets where length(content)>15;
+
+178. Rank Scores
+select
+score,
+dense_rank() over (order by score desc) as rank
+from scores

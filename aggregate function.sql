@@ -40,7 +40,11 @@ select p.project_id,round(avg(e.experience_years ),2) as average_years
 Easy
 
 1211. Queries Quality and Percentage
-Easy
+select query_name,
+round(AVG((rating * 1.0) / NULLIF(position, 0)),2) AS quality ,
+round(sum(case when rating < 3 then 1.0 else 0.0 end) * 100 /nullif(count(rating),0),2) as poor_query_percentage
+from queries
+group by query_name 
 
 1193. Monthly Transactions I
 select

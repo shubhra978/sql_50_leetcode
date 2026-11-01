@@ -30,7 +30,11 @@ FROM price_sol_cte
 GROUP BY product_id;
 
 1075. Project Employees I
-Easy
+select p.project_id,round(avg(e.experience_years ),2) as average_years 
+ from project p
+ left join employee e
+ on p.employee_id = e.employee_id
+ group by project_id
 
 1633. Percentage of Users Attended a Contest
 Easy

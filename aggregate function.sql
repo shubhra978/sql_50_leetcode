@@ -37,7 +37,15 @@ select p.project_id,round(avg(e.experience_years ),2) as average_years
  group by project_id
 
 1633. Percentage of Users Attended a Contest
-Easy
+select
+r.contest_id,
+ ROUND(COUNT(u.user_id) * 100.0 / (SELECT COUNT(*) FROM Users), 2) AS percentage
+from users u
+left join register r
+on u.user_id = r.user_id
+where contest_id is not null
+group by r.contest_id
+order by ROUND(COUNT(u.user_id) * 100.0 / (SELECT COUNT(*) FROM Users), 2) desc, contest_id 
 
 1211. Queries Quality and Percentage
 select query_name,

@@ -2,7 +2,16 @@
 Easy
 
 1141. User Activity for the Past 30 Days I
-Easy
+select
+activity_date as day,
+count(distinct user_id) as active_users 
+from
+Activity 
+ where activity_date > '2019-07-27'::date - INTERVAL '30 days'
+    AND activity_date <= '2019-07-27'::date
+    and activity_type in ('open_session', 'end_session', 'scroll_down', 'send_message')
+group by activity_date
+
 
 1070. Product Sales Analysis III
 /*using subquery*/

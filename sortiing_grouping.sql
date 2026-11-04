@@ -35,7 +35,13 @@ WHERE
   
 
 596. Classes With at Least 5 Students
-Easy
+-- Write your PostgreSQL query statement below
+select
+class
+from
+courses
+group by class
+having count(student) >= 5
 
 1729. Find Followers Count
 Easy

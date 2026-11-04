@@ -1,4 +1,5 @@
 620. Not Boring Movies
+    
 select
 id,
 movie,
@@ -9,6 +10,7 @@ where id % 2 !=0 and description != 'boring'
 order by rating desc
 
 1251. Average Selling Price
+    
 WITH price_sol_cte AS (
     SELECT
         p.product_id,
@@ -30,6 +32,7 @@ FROM price_sol_cte
 GROUP BY product_id;
 
 1075. Project Employees I
+    
 select p.project_id,round(avg(e.experience_years ),2) as average_years 
  from project p
  left join employee e
@@ -37,6 +40,7 @@ select p.project_id,round(avg(e.experience_years ),2) as average_years
  group by project_id
 
 1633. Percentage of Users Attended a Contest
+    
 select
 r.contest_id,
  ROUND(COUNT(u.user_id) * 100.0 / (SELECT COUNT(*) FROM Users), 2) AS percentage
@@ -48,6 +52,7 @@ group by r.contest_id
 order by ROUND(COUNT(u.user_id) * 100.0 / (SELECT COUNT(*) FROM Users), 2) desc, contest_id 
 
 1211. Queries Quality and Percentage
+    
 select query_name,
 round(AVG((rating * 1.0) / NULLIF(position, 0)),2) AS quality ,
 round(sum(case when rating < 3 then 1.0 else 0.0 end) * 100 /nullif(count(rating),0),2) as poor_query_percentage
@@ -55,6 +60,7 @@ from queries
 group by query_name 
 
 1193. Monthly Transactions I
+    
 select
 TO_CHAR(trans_date ,'YYYY-MM') as month,
 country,

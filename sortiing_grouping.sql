@@ -44,7 +44,12 @@ group by class
 having count(student) >= 5
 
 1729. Find Followers Count
-Easy
+-- Write your PostgreSQL query statement below
+select user_id,
+count(follower_id) as followers_count
+from followers
+group by user_id
+order by user_id
 
 619. Biggest Single Number
 Easy

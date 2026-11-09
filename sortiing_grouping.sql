@@ -1,5 +1,11 @@
 2356. Number of Unique Subjects Taught by Each Teacher
-Easy
+select 
+teacher_id,
+count(distinct subject_id) as cnt 
+from
+Teacher
+group by teacher_id
+
 
 1141. User Activity for the Past 30 Days I
 select

@@ -7,8 +7,16 @@ Solution
 Easy
 
 Delete Duplicate Emails
-Solution
-Easy
+WITH email_rank_cte AS (
+    SELECT 
+        id,
+        ROW_NUMBER() OVER (PARTITION BY email ORDER BY id ASC) AS email_rank
+    FROM person
+)
+DELETE FROM person
+USING email_rank_cte
+WHERE person.id = email_rank_cte.id
+  AND email_rank_cte.email_rank > 1;
 
 Second Highest Salary
   /*using subquery */

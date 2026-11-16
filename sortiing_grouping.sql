@@ -58,6 +58,17 @@ group by user_id
 order by user_id
 
 619. Biggest Single Number
-Easy
+with num_rank as (
+    select 
+    count(*),
+    num
+    from mynumbers
+    group by num
+    having count(*) <=1
+) 
+select
+ case 
+ when max(num) is not null then max(num) else null end as num  
+ from num_rank
 
 1045. Customers Who Bought All Products

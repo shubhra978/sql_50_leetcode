@@ -58,6 +58,7 @@ group by user_id
 order by user_id
 
 619. Biggest Single Number
+ /*using cte*/
 with num_rank as (
     select 
     count(*),
@@ -70,5 +71,13 @@ select
  case 
  when max(num) is not null then max(num) else null end as num  
  from num_rank
+
+/*using subquery*/
+ select MAX(num) as num
+from MyNumbers
+where num in(select num 
+            from MyNumbers 
+            group by num 
+            having count(*)=1);
 
 1045. Customers Who Bought All Products

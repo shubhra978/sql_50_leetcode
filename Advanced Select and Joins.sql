@@ -11,22 +11,22 @@ GROUP BY m.employee_id, m.name
 ORDER BY m.employee_id;
 
 Primary Department for Each Employee
-Solution
-Easy
+
 
 Triangle Judgement
-Solution
-Easy
 
+
+    
 Consecutive Numbers
-Solution
-Medium
+
+    
 
 Product Price at a Given Date
-Solution
-Medium
+
+    
 
 Last Person to Fit in the Bus
-Medium
+
+    
 
 Count Salary Categories

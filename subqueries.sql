@@ -9,13 +9,13 @@ order by employee_id
 
 Exchange Seats
 Solution
-Medium
+
 
 Movie Rating
-Medium
+
 
 Restaurant Growth
-Medium
+
 
 Friend Requests II: Who Has the Most Friends
 Solution

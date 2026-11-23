@@ -72,7 +72,6 @@ from
 Transactions
 group by TO_CHAR(trans_date ,'YYYY-MM') , country
 
-
 1174. Immediate Food Delivery II
 
 550. Game Play Analysis IV

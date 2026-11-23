@@ -56,7 +56,6 @@ group by managerid
 having count(*)>=5) 
   
 1934. Confirmation Rate
--- Write your PostgreSQL query statement below
 select
 s.user_id,
 ROUND(

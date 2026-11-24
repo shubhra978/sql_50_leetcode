@@ -81,3 +81,8 @@ where num in(select num
             having count(*)=1);
 
 1045. Customers Who Bought All Products
+ 
+select customer_id
+ from Customer
+ group by customer_id
+ having count(distinct product_key) = (select count(distinct product_key) from Product)
